@@ -11,18 +11,22 @@ Prima di eseguire ogni operazione sul worktree o sul repository,
 si verifichi lo stato del repository con `git status`.
 
 1. Si cloni localmente il repository
-git clone https://github.com/APICe-at-DISI/OOP-git-merge-conflict-test
-cd OP-git-merge-conflict-test/
+$git clone https://github.com/APICe-at-DISI/OOP-git-merge-conflict-test
+$cd OP-git-merge-conflict-test/
 2. Ci si assicuri di avere localmente entrambi i branch remoti
-git branch -a
+$git branch -a
 * master
   remotes/origin/HEAD -> origin/master
   remotes/origin/feature
   remotes/origin/master
+$ git checkout feature
 
 3. Si faccia il merge di `feature` dentro `master`, ossia: si posizioni la `HEAD` su `master`
    e da qui si esegua il merge di `feature`
-   git merge origin/feature
+  $ git merge feature
+  Auto-merging HelloWorld.java
+  CONFLICT (content): Merge conflict in HelloWorld.java
+  Automatic merge failed; fix conflicts and then commit the result.
 4. Si noti che viene generato un **merge conflict**!
 5. Si risolva il merge conflict come segue:
    - Il programma Java risultante deve stampare sia il numero di processori disponibili
